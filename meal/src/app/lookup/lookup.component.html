@@ -1,0 +1,15 @@
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Ingredients</mat-label>
+  <input
+    type="text"
+    placeholder="Select one"
+    aria-label="Ingredients"
+    matInput
+    [formControl]="myControl"
+    [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
