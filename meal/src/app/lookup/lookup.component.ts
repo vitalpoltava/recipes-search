@@ -24,6 +24,10 @@ export class LookupComponent implements OnInit {
     );
   }
 
+  onSelect(option: string) {
+    this.selected.emit(option);
+  }
+
   private filter(value: string): string[] | undefined {
     const filterValue = value.toLowerCase();
     if (this.ingredients) {
