@@ -13,11 +13,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LookupComponent } from './lookup/lookup.component';
 import { ApiService } from "./api.service";
 import { ConfigsService } from "./configs.service";
+import { ContainerComponent } from './container/container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LookupComponent
+    LookupComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
