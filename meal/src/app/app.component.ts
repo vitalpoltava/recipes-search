@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiService } from './services/api/api.service'
+import { ApiService } from './services/api/api.service';
+import { Meal } from './types/interfaces';
 
 @Component({
   selector: 'meal-app',
@@ -10,6 +11,7 @@ import { ApiService } from './services/api/api.service'
 export class AppComponent implements OnInit {
   title = 'Meal selection';
   ingredients!: Observable<string[]>;
+  meals!: Observable<Meal[]>;
 
   constructor(private api: ApiService) { }
 
@@ -17,7 +19,7 @@ export class AppComponent implements OnInit {
     this.ingredients = this.api.getIngredients();
   }
 
-  onSelect(selectedIngredient: string) {
-    console.log(selectedIngredient)
+  onSelectIngredient(selectedIngredient: string) {
+    this.meals = this.api.getMealByIngredient(selectedIngredient);
   }
 }

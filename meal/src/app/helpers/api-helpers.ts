@@ -1,4 +1,4 @@
-import { Ingredient, IngredientsResponse } from '../types/interfaces';
+import { Ingredient, IngredientsResponse, MealsResponse, Meal } from '../types/interfaces';
 
 export const ingredientsMapper = (response: IngredientsResponse): string[] => {
   const meals = response.meals;
@@ -10,3 +10,8 @@ export const ingredientsMapper = (response: IngredientsResponse): string[] => {
   }
   return [];
 }
+
+export const mealsMapper = (response: MealsResponse): Meal[] => response.meals || [];
+
+export const mapIngredientForApi = (rawIngredient: string): string =>
+  rawIngredient.toLowerCase().replace(' ', '_');

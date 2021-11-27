@@ -5,7 +5,7 @@
     placeholder="Select one"
     aria-label="Ingredients"
     matInput
-    [formControl]="myControl"
+    [formControl]="lookupControl"
     [matAutocomplete]="auto">
   <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelect($event.option.value)">
     <mat-option *ngFor="let option of filteredOptions | async" [value]="option">

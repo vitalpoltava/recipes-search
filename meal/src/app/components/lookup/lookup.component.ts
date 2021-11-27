@@ -12,13 +12,13 @@ export class LookupComponent implements OnInit {
   @Input() ingredients!: string[] | null;
   @Output() selected = new EventEmitter<string>();
 
-  myControl = new FormControl();
+  lookupControl = new FormControl();
   filteredOptions!: Observable<string[] | undefined>;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filteredOptions = this.lookupControl.valueChanges.pipe(
       startWith(''),
       map((value: string) => this.filter(value)),
     );
@@ -31,7 +31,8 @@ export class LookupComponent implements OnInit {
   private filter(value: string): string[] | undefined {
     const filterValue = value.toLowerCase();
     if (this.ingredients) {
-      return this.ingredients.filter(option => option.toLowerCase().includes(filterValue));
+      return this.ingredients.filter((option: string) =>
+        option.toLowerCase().includes(filterValue));
     }
     return;
   }
