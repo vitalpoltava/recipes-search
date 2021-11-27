@@ -14,12 +14,14 @@ import { LookupComponent } from './components/lookup/lookup.component';
 import { ApiService } from "./services/api/api.service";
 import { ConfigsService } from "./services/config/configs.service";
 import { ContainerComponent } from './components/container/container.component';
+import { MealComponent } from './components/meal/meal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LookupComponent,
-    ContainerComponent
+    ContainerComponent,
+    MealComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,6 @@
-<ng-container *ngFor="let meal of meals">
-    {{meal.strMeal}}
-</ng-container>
+<div class="menu-list-container">
+    <ng-container *ngFor="let meal of meals">
+        <meal-item [item]="meal"></meal-item>
+    </ng-container>
+</div>
+
