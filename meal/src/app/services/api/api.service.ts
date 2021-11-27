@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ConfigsService } from '../config/configs.service';
-import { ingredientsMapper, mapIngredientForApi, mealsMapper } from '../../helpers/api-helpers';
+import { ingredientsMapper, mapIngredientForApi, mealsMapper, mealMapper } from '../../helpers/api-helpers';
 import { Meal } from '../../types/interfaces';
 
 @Injectable({
@@ -21,5 +21,11 @@ export class ApiService {
     return this.http.get(`
       ${this.configs.API_MEALS_BY_INGREDIENT}${mapIngredientForApi(ingredient)}
     `, {}).pipe(map(mealsMapper));
+  }
+
+  getMealById(mealId: string): Observable<Meal> {
+    return this.http.get(`
+      ${this.configs.API_MEAL_BY_ID}${mealId}
+    `, {}).pipe(map(mealMapper));
   }
 }

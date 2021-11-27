@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Meal } from '../../types/interfaces';
 
 @Component({
@@ -6,12 +6,11 @@ import { Meal } from '../../types/interfaces';
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.scss']
 })
-export class ContainerComponent implements OnInit {
+export class ContainerComponent {
   @Input() meals!: Meal[] | null;
+  @Output() showItem = new EventEmitter<string>();
 
-  constructor() { }
-
-  ngOnInit(): void {
+  showItemHandler(id: string) {
+    this.showItem.emit(id);
   }
-
 }

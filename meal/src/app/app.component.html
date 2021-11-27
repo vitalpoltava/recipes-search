@@ -11,7 +11,10 @@
 <div class="content" role="main">
   <lookup (selected)="onSelectIngredient($event)" [ingredients]="ingredients | async"></lookup>
   <div class="list-container">
-    <list-container [meals]="meals | async"></list-container>
+    <list-container
+      [meals]="meals | async"
+      (showItem)="showItemDetails($event)"
+    ></list-container>
   </div>
 </div>
 

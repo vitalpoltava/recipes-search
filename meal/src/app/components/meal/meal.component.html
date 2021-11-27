@@ -1,4 +1,4 @@
-<div class="meal-item" title="Click to see the recipe">
+<div class="meal-item" title="Click to see the recipe" (click)="onClick(item.idMeal)">
     <img src="{{item.strMealThumb}}" alt="{{item.strMeal}}">
     <div class="item-name">{{item.strMeal}}</div>
 </div>

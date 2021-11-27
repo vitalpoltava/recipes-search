@@ -3,8 +3,12 @@ export interface Ingredient {
 }
 
 export interface Meal {
+  idMeal: string;
   strMeal: string;
   strMealThumb: string;
+  strArea?: string;
+  strInstructions?: string;
+  strCategory?: string;
 }
 
 export interface IngredientsResponse {

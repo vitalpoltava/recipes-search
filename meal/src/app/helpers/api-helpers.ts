@@ -13,5 +13,10 @@ export const ingredientsMapper = (response: IngredientsResponse): string[] => {
 
 export const mealsMapper = (response: MealsResponse): Meal[] => response.meals || [];
 
+export const mealMapper = (response: MealsResponse): Meal => {
+  const [meal] = mealsMapper(response);
+  return meal;
+};
+
 export const mapIngredientForApi = (rawIngredient: string): string =>
   rawIngredient.toLowerCase().replace(' ', '_');

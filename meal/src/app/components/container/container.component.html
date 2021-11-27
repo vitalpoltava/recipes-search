@@ -1,6 +1,7 @@
+<div *ngIf="!meals || !meals.length">No recipes in the list so far...</div>
 <div class="menu-list-container">
     <ng-container *ngFor="let meal of meals">
-        <meal-item [item]="meal"></meal-item>
+        <meal-item [item]="meal" (showItem)="showItemHandler($event)"></meal-item>
     </ng-container>
 </div>
 

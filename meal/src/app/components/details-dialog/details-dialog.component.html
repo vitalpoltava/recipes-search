@@ -1,0 +1,16 @@
+<ng-container *ngIf="data | async as details; else loadingDetails">
+    <h2 mat-dialog-title>{{details.strMeal}} <span class="muted-text">({{details.strCategory}}, {{details.strArea}})</span></h2>
+    <mat-dialog-content class="mat-typography">
+        <div class="meal-dialog-details-container">
+            <div><img src="{{details.strMealThumb}}" alt="{{details.strMeal}}"></div>
+            <pre>{{details.strInstructions}}</pre>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+</ng-container>
+
+<ng-template #loadingDetails>
+    <div>Loading details...</div>
+</ng-template>
