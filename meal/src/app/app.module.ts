@@ -10,10 +10,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
-import { LookupComponent } from './lookup/lookup.component';
-import { ApiService } from "./api.service";
-import { ConfigsService } from "./configs.service";
-import { ContainerComponent } from './container/container.component';
+import { LookupComponent } from './components/lookup/lookup.component';
+import { ApiService } from "./services/api/api.service";
+import { ConfigsService } from "./services/config/configs.service";
+import { ContainerComponent } from './components/container/container.component';
 
 @NgModule({
   declarations: [
