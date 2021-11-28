@@ -30,6 +30,8 @@ As far I used a recursive variant and average single run time was `0.005` ms, 10
 **b) Write a function that sorts 10000 powers (a^b) where a and b are random numbers between 100 and 10000? Estimate how long it would take on your machine?**
 
 ```
+  const getRandom = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+    
   function powList(num = 0) {
     const getRandomSet = getRandom.bind(this, 10000, 100);
     const result = [];
