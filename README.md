@@ -33,7 +33,7 @@ As far I used a recursive variant and average single run time was `0.005` ms, 10
   const getRandom = (min, max) => Math.floor(Math.random() * (max - min)) + min;
     
   function powList(num = 0) {
-    const getRandomSet = getRandom.bind(this, 10000, 100);
+    const getRandomSet = getRandom.bind(this, 100, 10000);
     const result = [];
     for (let i = 0; i < num; i++) {
       const base = getRandomSet();
